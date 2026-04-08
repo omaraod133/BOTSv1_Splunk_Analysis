@@ -43,7 +43,27 @@ The scan started at **2016-08-11 00:36:45** and ended at **2016-08-11 00:54:30**
 <img width="1915" height="918" alt="{3F7D6357-8F8F-498B-B01C-48711FCD989C}" src="https://github.com/user-attachments/assets/d8fc9f57-8b29-421a-959e-e07a1b87a4a1" />
 So, the answer to the first question is: **40.80.148.42**
 
-### Q2:
+### Q2: What company created the web vulnerability scanner used by Po1s0n1vy? Type the company name.
+we can answer this qoustion from the privese one 
+<img width="1849" height="906" alt="{BEF9A2DB-46EB-4106-BC55-285372E5A80R}" src="https://github.com/user-attachments/assets/66d25afc-a1eb-4725-99fd-080949459ec3" />
+
+so the correct answer is **Acunetix**
+
+
+next qoution
+### Q3:What content management system is imreallynotbatman.com likely using?
+let finde out by search for content management and see is there any reslute 
+<img width="1847" height="914" alt="{BF2EC3E1-0BE9-4A18-B02E-3FC90FB92C88D}" src="https://github.com/user-attachments/assets/d107ad3c-8bf8-4c3e-b24e-7fd304efabe0" />
+
+we found that jaomla is the content management system using by imreallynotbatman.com.
+
+### Q3: What is the name of the file that defaced the imreallynotbatman.com website? Please submit only the name of the file with extension?
+this qoution is intersting first i think that mayb
+
+
+
+
+
 
 
 

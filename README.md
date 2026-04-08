@@ -58,22 +58,19 @@ Let’s find out by searching for “content management” and seeing if there a
 
 We found that **Joomla** is the content management system used by imreallynotbatman.com.
 
-### Q3: What is the name of the file that defaced the imreallynotbatman.com website? Please submit only the name of the file with extension?
+### Q4: What is the name of the file that defaced the imreallynotbatman.com website? Please submit only the name of the file with extension?
 This question is interesting. At first, I thought that maybe the attackers uploaded a defaced file, so I started searching for that.
 
 Then I realized they might have found a way to make the imreallynotbatman.com website download the defaced file (which is what they actually did).
 
+First of all, since the imreallynotbatman.com downloaded the file, this means the source IP would be the imreallynotbatman.com IP.
 <img width="1851" height="913" alt="{8C3768B7-C2E8-48D2-AF61-062DDC158FE7}L" src="https://github.com/user-attachments/assets/873017fb-5c9e-4bfe-93ad-485bbf1ec88b" />
 
-we see that there is a lot of record about 765
-then if we scroll down a litte bit and see the destnation ip we see something intersted we see that there is one of the suspicious ip address 23.22.63.114
+We can see that there are many records (about 765). If we scroll down a little and check the destination IPs filed, we notice something interesting: there is a suspicious IP address — **23.22.63.114**.
 
-First of all, since the website downloaded the file, this means the source IP would be the imreallynotbatman.com IP.
 
 <img width="1852" height="893" alt="{2BAD2C1F-7A1F-4FAD-AF6F-4A9B6B8C35B2}M" src="https://github.com/user-attachments/assets/3252619b-5254-4937-afe6-fc322c534c74" />
 
-
-We can see that there are many records (about 765). If we scroll down a little and check the destination IPs filed, we notice something interesting: there is a suspicious IP address — **23.22.63.114**.
 
 If we add this IP (23.22.63.114) to our search as the destination IP address, we find that there are only two events.
 
@@ -81,8 +78,33 @@ If we add this IP (23.22.63.114) to our search as the destination IP address, we
 
 If we examine those events closely, we can see the defaced file being downloaded from: **prankglassinebracket.jumpingcrab.com:1337**
 
-
-
 <img width="1920" height="1080" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/82eb4728-14aa-4b0b-b173-60e81f69741a" />
 
 And the correct answer is **poisonivy-is-coming-for-you-batman.jpeg**
+
+### Q5:This attack used dynamic DNS to resolve to the malicious IP. What fully qualified domain name (FQDN) is associated with this attack?
+Since the question asks for the FQDN, we will change the `sourcetype` from `stream:http` to `stream:dns` to search for DNS events.
+
+From the question, we need to find the FQDN associated with the malicious IP. We have two malicious IP addresses:
+
+- 40.80.148.42
+- 23.22.63.114
+- 
+We will search and check if there are any DNS events associated with them.  
+First, we will start with **40.80.148.42**.
+
+<img width="1856" height="907" alt="{29C0EC06-EE53-4F31-9F1B-58835F0E1B1D}0" src="https://github.com/user-attachments/assets/6b0d455e-5556-416f-8aa5-0c2282182cc0" />
+As we can see, there are 0 events.
+
+Now, let’s check the other IP:
+
+<img width="1920" height="911" alt="{D10462CA-5CCB-400C-8F26-9F1DBCC30414}DN" src="https://github.com/user-attachments/assets/7a97f5d1-e66a-409b-9944-fe3e5c53b1c9" />
+
+Here, we can see that there is 1 event, and the FQDN is:  
+**prankglassinebracket.jumpingcrab.com**
+
+This makes sense because, as we saw earlier, this is the website that **mreallynotbatman.com** visited to download the malicious file.
+
+
+### Q6:What IPv4 address has Po1s0n1vy tied to domains that are pre-staged to attack Wayne Enterprises?
+

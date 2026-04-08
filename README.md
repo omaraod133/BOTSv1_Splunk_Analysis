@@ -68,9 +68,7 @@ First of all, since the imreallynotbatman.com downloaded the file, this means th
 
 We can see that there are many records (about 765). If we scroll down a little and check the destination IPs filed, we notice something interesting: there is a suspicious IP address — **23.22.63.114**.
 
-
 <img width="1852" height="893" alt="{2BAD2C1F-7A1F-4FAD-AF6F-4A9B6B8C35B2}M" src="https://github.com/user-attachments/assets/3252619b-5254-4937-afe6-fc322c534c74" />
-
 
 If we add this IP (23.22.63.114) to our search as the destination IP address, we find that there are only two events.
 
@@ -78,7 +76,8 @@ If we add this IP (23.22.63.114) to our search as the destination IP address, we
 
 If we examine those events closely, we can see the defaced file being downloaded from: **prankglassinebracket.jumpingcrab.com:1337**
 
-<img width="1920" height="1080" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/82eb4728-14aa-4b0b-b173-60e81f69741a" />
+<img width="1853" height="858" alt="{A4B526CF-198A-437C-80B3-95D7E9ECAF8B}F" src="https://github.com/user-attachments/assets/0d78bd72-9d98-4597-894f-9b1a61113028" />
+
 
 And the correct answer is **poisonivy-is-coming-for-you-batman.jpeg**
 

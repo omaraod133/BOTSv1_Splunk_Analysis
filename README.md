@@ -44,26 +44,45 @@ The scan started at **2016-08-11 00:36:45** and ended at **2016-08-11 00:54:30**
 So, the answer to the first question is: **40.80.148.42**
 
 ### Q2: What company created the web vulnerability scanner used by Po1s0n1vy? Type the company name.
-we can answer this qoustion from the privese one 
+We can answer this question from the previous one.
+
 <img width="1849" height="906" alt="{BEF9A2DB-46EB-4106-BC55-285372E5A80R}" src="https://github.com/user-attachments/assets/66d25afc-a1eb-4725-99fd-080949459ec3" />
 
-so the correct answer is **Acunetix**
+So, the correct answer is **Acunetix**.
 
-
-next qoution
 ### Q3:What content management system is imreallynotbatman.com likely using?
-let finde out by search for content management and see is there any reslute 
+
+Let’s find out by searching for “content management” and seeing if there are any results.
+
 <img width="1847" height="914" alt="{BF2EC3E1-0BE9-4A18-B02E-3FC90FB92C88D}" src="https://github.com/user-attachments/assets/d107ad3c-8bf8-4c3e-b24e-7fd304efabe0" />
 
-we found that jaomla is the content management system using by imreallynotbatman.com.
+We found that **Joomla** is the content management system used by imreallynotbatman.com.
 
 ### Q3: What is the name of the file that defaced the imreallynotbatman.com website? Please submit only the name of the file with extension?
-this qoution is intersting first i think that mayb
+This question is interesting. At first, I thought that maybe the attackers uploaded a defaced file, so I started searching for that.
+
+Then I realized they might have found a way to make the imreallynotbatman.com website download the defaced file (which is what they actually did).
+
+<img width="1851" height="913" alt="{8C3768B7-C2E8-48D2-AF61-062DDC158FE7}L" src="https://github.com/user-attachments/assets/873017fb-5c9e-4bfe-93ad-485bbf1ec88b" />
+
+we see that there is a lot of record about 765
+then if we scroll down a litte bit and see the destnation ip we see something intersted we see that there is one of the suspicious ip address 23.22.63.114
+
+First of all, since the website downloaded the file, this means the source IP would be the imreallynotbatman.com IP.
+
+<img width="1852" height="893" alt="{2BAD2C1F-7A1F-4FAD-AF6F-4A9B6B8C35B2}M" src="https://github.com/user-attachments/assets/3252619b-5254-4937-afe6-fc322c534c74" />
+
+
+We can see that there are many records (about 765). If we scroll down a little and check the destination IPs filed, we notice something interesting: there is a suspicious IP address — **23.22.63.114**.
+
+If we add this IP (23.22.63.114) to our search as the destination IP address, we find that there are only two events.
+
+<img width="1852" height="911" alt="{76AEF881-8D2F-40E5-AB0A-7C70FE1A2375}" src="https://github.com/user-attachments/assets/93b0197f-6330-4b6a-8732-da269f814076" />
+
+If we examine those events closely, we can see the defaced file being downloaded from: **prankglassinebracket.jumpingcrab.com:1337**
 
 
 
+<img width="1920" height="1080" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/82eb4728-14aa-4b0b-b173-60e81f69741a" />
 
-
-
-
-
+And the correct answer is **poisonivy-is-coming-for-you-batman.jpeg**

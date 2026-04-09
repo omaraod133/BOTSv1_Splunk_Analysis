@@ -1,4 +1,4 @@
-# BOTSv1_Splunk_Analysis
+<img width="1848" height="911" alt="{CB2D8137-D72E-4BC2-918D-35AA05626FF7}" src="https://github.com/user-attachments/assets/dd572f20-1b16-45e5-99ea-24d588f43e82" /># BOTSv1_Splunk_Analysis
 
 ## Objective
 
@@ -88,7 +88,7 @@ From the question, we need to find the FQDN associated with the malicious IP. We
 
 - 40.80.148.42
 - 23.22.63.114
-- 
+
 We will search and check if there are any DNS events associated with them.  
 First, we will start with **40.80.148.42**.
 
@@ -107,3 +107,55 @@ This makes sense because, as we saw earlier, this is the website that **mreallyn
 
 ### Q6:What IPv4 address has Po1s0n1vy tied to domains that are pre-staged to attack Wayne Enterprises?
 
+
+
+### Q7: What IPv4 address is likely attempting a brute force password attack against imreallynotbatman.com?
+
+from the qoution we know that there is ip address that do brute force password attack meaing an ip address sending a lot of request to test passsword to find which one is the corect one 
+
+and we know from the from privase qoution that there is two ip address that send alot of request and they are
+
+- 40.80.148.42
+- 23.22.63.114
+
+we know ip 40.80.148.42 is proforming vlunblity scan 
+so let look ip 23.22.63.114 and see what he did
+
+<img width="1855" height="909" alt="{275CE82F-3AB4-4F95-9DD5-9DF175812231}" src="https://github.com/user-attachments/assets/b244a418-723f-4c37-a7d5-ec498b830343" />
+
+and let is find what that ip did 
+<img width="1848" height="911" alt="{CB2D8137-D72E-4BC2-918D-35AA05626FF7}BR" src="https://github.com/user-attachments/assets/a2d419fe-e0fe-4ce8-a31c-ae527edb5928" />
+
+form this we know that he did brut force attack
+
+the correct answer is 23.22.63.114
+
+### Q8: What is the name of the executable uploaded by Po1s0n1vy? 
+here he want the executbale file meaning he look for file that end with .exe since that file is uploaded by Po1s0n1vy it is a maluisc file
+so we will look in our firewall log
+
+<img width="1848" height="911" alt="{CB2D8137-D72E-4BC2-918D-35AA05626FF7}BR" src="https://github.com/user-attachments/assets/2d020137-c809-4b37-9e1e-6cd758f5c8f6" />
+
+let is see the first one which look suspicious 3791.exe
+<img width="1857" height="910" alt="{F44146B3-AAC8-4C2A-BD26-99E350FAABD1}FE" src="https://github.com/user-attachments/assets/96d31a0f-f6cd-4655-9904-75daac385cfc" />
+<img width="1919" height="914" alt="{3C464D78-CDAF-418B-972F-9805AB6173E3}FI2" src="https://github.com/user-attachments/assets/f46a5d3f-8a6a-41c7-9269-24bea6426b46" />
+
+form that the name of the executable file that is uploaded be Po1s0n1vy is **3791.exe** 
+
+### Q9: What is the MD5 hash of the executable uploaded?
+for the privasue image we know the hash of the file 
+
+<img width="1857" height="910" alt="{F44146B3-AAC8-4C2A-BD26-99E350FAABD1}Hs" src="https://github.com/user-attachments/assets/cae83646-3ccb-4fc5-adfa-651ca23eaf07" />
+
+we will take that hash and put it in seach then we go to detales to find the MD5
+
+<img width="1903" height="809" alt="{A584E326-0375-417E-8280-676D20E18F20}MD5" src="https://github.com/user-attachments/assets/c4ac717b-9ee7-4039-8c58-dc6f0822a35a" />
+
+### Q10:What was the first brute force password used?
+this is intersting qoution becase we need to extract the password then orgnized by time and serach for the first password
+let is extrect password
+
+<img width="1916" height="890" alt="{054D0AF3-D6AE-493C-A35D-CD86E9C0C79C}" src="https://github.com/user-attachments/assets/d3b66265-36f1-47b2-a5a1-5e912e71b85f" />
+we need to extract password from this **form_data** filed
+
+we will use 

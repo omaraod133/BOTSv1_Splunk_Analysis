@@ -1,4 +1,4 @@
-<img width="1848" height="911" alt="{CB2D8137-D72E-4BC2-918D-35AA05626FF7}" src="https://github.com/user-attachments/assets/dd572f20-1b16-45e5-99ea-24d588f43e82" /># BOTSv1_Splunk_Analysis
+# BOTSv1_Splunk_Analysis
 
 ## Objective
 
@@ -31,8 +31,7 @@ Here, we can see that there are two IP addresses sending a large number of reque
     
 - 23.22.63.114
     
-
-You can test either of these, but we will dive a bit deeper to determine which one performed the scan.
+ we will dive a bit deeper to determine which one performed the scan.
 
 We will examine the firewall logs for the IP address **40.80.148.42** and look at the signature field. We can see that there is scanning activity identified as **Acunetix Web Vulnerability Scanner**.
 
@@ -111,51 +110,63 @@ This makes sense because, as we saw earlier, this is the website that **mreallyn
 
 ### Q7: What IPv4 address is likely attempting a brute force password attack against imreallynotbatman.com?
 
-from the qoution we know that there is ip address that do brute force password attack meaing an ip address sending a lot of request to test passsword to find which one is the corect one 
+From the question, we know there is an IP address performing a brute force password attack, meaning it is sending many requests to try different passwords until it finds the correct one.
 
-and we know from the from privase qoution that there is two ip address that send alot of request and they are
+From the previous question, we identified two IP addresses that sent a large number of requests:
 
 - 40.80.148.42
 - 23.22.63.114
 
-we know ip 40.80.148.42 is proforming vlunblity scan 
-so let look ip 23.22.63.114 and see what he did
+We know that the IP address 40.80.148.42 is performing a vulnerability scan. So, let’s examine 23.22.63.114 to see what activity it performed.
 
 <img width="1855" height="909" alt="{275CE82F-3AB4-4F95-9DD5-9DF175812231}" src="https://github.com/user-attachments/assets/b244a418-723f-4c37-a7d5-ec498b830343" />
 
-and let is find what that ip did 
+Next, let’s analyze what this IP address did:
 <img width="1848" height="911" alt="{CB2D8137-D72E-4BC2-918D-35AA05626FF7}BR" src="https://github.com/user-attachments/assets/a2d419fe-e0fe-4ce8-a31c-ae527edb5928" />
 
-form this we know that he did brut force attack
+From this, we can conclude that it performed a brute force attack.
 
-the correct answer is 23.22.63.114
+The correct answer is: 23.22.63.114
 
 ### Q8: What is the name of the executable uploaded by Po1s0n1vy? 
-here he want the executbale file meaning he look for file that end with .exe since that file is uploaded by Po1s0n1vy it is a maluisc file
-so we will look in our firewall log
+Here, the question is asking for the executable file, which typically has a .exe extension. Since the file was uploaded by Po1s0n1vy, it is likely malicious.
+
+We will check the firewall logs:
 
 <img width="1848" height="911" alt="{CB2D8137-D72E-4BC2-918D-35AA05626FF7}BR" src="https://github.com/user-attachments/assets/2d020137-c809-4b37-9e1e-6cd758f5c8f6" />
 
-let is see the first one which look suspicious 3791.exe
+Let’s inspect the first suspicious file: 3791.exe
+
 <img width="1857" height="910" alt="{F44146B3-AAC8-4C2A-BD26-99E350FAABD1}FE" src="https://github.com/user-attachments/assets/96d31a0f-f6cd-4655-9904-75daac385cfc" />
 <img width="1919" height="914" alt="{3C464D78-CDAF-418B-972F-9805AB6173E3}FI2" src="https://github.com/user-attachments/assets/f46a5d3f-8a6a-41c7-9269-24bea6426b46" />
 
-form that the name of the executable file that is uploaded be Po1s0n1vy is **3791.exe** 
+From this, we can confirm that the executable file uploaded by Po1s0n1vy is:
+
+3791.exe
 
 ### Q9: What is the MD5 hash of the executable uploaded?
-for the privasue image we know the hash of the file 
+From the previous image, we can identify the file’s hash:
 
 <img width="1857" height="910" alt="{F44146B3-AAC8-4C2A-BD26-99E350FAABD1}Hs" src="https://github.com/user-attachments/assets/cae83646-3ccb-4fc5-adfa-651ca23eaf07" />
 
-we will take that hash and put it in seach then we go to detales to find the MD5
-
+We take that hash and search in **virustotal** for it, then navigate to the details section to find the MD5 value:
 <img width="1903" height="809" alt="{A584E326-0375-417E-8280-676D20E18F20}MD5" src="https://github.com/user-attachments/assets/c4ac717b-9ee7-4039-8c58-dc6f0822a35a" />
 
 ### Q10:What was the first brute force password used?
-this is intersting qoution becase we need to extract the password then orgnized by time and serach for the first password
-let is extrect password
+This is an interesting question because we need to extract the passwords, organize them by time, and identify the first one used.
 
+First, we extract the passwords:
 <img width="1916" height="890" alt="{054D0AF3-D6AE-493C-A35D-CD86E9C0C79C}" src="https://github.com/user-attachments/assets/d3b66265-36f1-47b2-a5a1-5e912e71b85f" />
-we need to extract password from this **form_data** filed
+We need to extract the password from the form_data field.
 
-we will use 
+We can use a regular expression (**regex**) to extract the password from this field:
+
+<img width="1914" height="916" alt="{18A3A28D-DE6A-42FE-A885-0420F21EA62B}" src="https://github.com/user-attachments/assets/35a50620-4635-4182-bb1c-1bf7df6a7950" />
+
+Now we have extracted the passwords along with their **timestamps**. The next step is to sort them by time to identify the earliest one by clicking on the time column:
+
+<img width="1919" height="881" alt="{D69EB4EF-1E91-4D5B-9F73-7AE8E3AC0216}SO" src="https://github.com/user-attachments/assets/48743a9c-9191-491e-bc4e-32d438676d25" />
+
+The first password used was at 2016-08-11 00:45:21.226, and the password is:
+
+12345678

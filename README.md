@@ -170,3 +170,38 @@ Now we have extracted the passwords along with their **timestamps**. The next st
 The first password used was at 2016-08-11 00:45:21.226, and the password is:
 
 12345678
+
+### Q11:What was the correct password for admin access to the content management system running "imreallynotbatman.com"?
+I initially thought that if the attacker performed a brute-force attack on the company website and successfully logged in using one of the passwords it would mean that a password was reused.
+
+<img width="1856" height="910" alt="{DAFD3EDE-A0FF-48F7-BB8A-E693CE5FC26B}" src="https://github.com/user-attachments/assets/0f9f8947-9221-4902-954d-6143593d6408" />
+However the data did not show that. It indicated that each password was tried only once.
+After thinking more about it I realized that the attacker might have used a different account to log in
+To test this idea, I removed the src_ip address from the search
+<img width="1852" height="907" alt="{AEEF36BC-83A4-49E7-98AF-C9202FF90094}" src="https://github.com/user-attachments/assets/282f7157-829a-4d48-8033-db8f05e20ec7" />
+
+After doing that I was able to identify the correct password.
+The correct answer is: **batman**
+
+If we want to identify the IP address used by the attacker to log in, we can use the **where** function in Splunk.
+
+<img width="1899" height="807" alt="{A75D588B-9725-4695-AEB4-D6C1CA9C0129}" src="https://github.com/user-attachments/assets/9396f988-378c-4753-a03f-664f646f9ed6" />
+From the results, we can see that the attacker used the IP address 40.80.148.42 to successfully log in. Additionally, there is approximately a 2-minute gap between discovering the correct password and the successful login using that password.
+
+### Q12:What was the average password length used in the password brute forcing attempt?
+here he need the average length of password, we can do that by use len function in splunk
+<img width="1917" height="784" alt="{350A2B38-8B79-425D-999D-ECFAE81F337F}" src="https://github.com/user-attachments/assets/fb33f31b-d9dd-4061-bd1c-17ac8cc867ef" />
+
+We use eval pass_length=len(pass) to create a new field called pass_length that contains the length of each password. Then we apply stats avg(pass_length).
+
+What does avg do? It calculates the average length of the passwords, which in this case is 6.174.
+
+### Q13: How many seconds elapsed between the time the brute force password scan identified the correct password and the compromised login? 
+To discover that, we need to check the time when the attacker identified the correct password and when the attacker used that password to log in.
+
+<img width="1906" height="806" alt="{16E1C5DB-B0D3-4A2B-9642-96A2253DECBC}" src="https://github.com/user-attachments/assets/00637ec0-65b1-4d7b-b4a6-e23045e5ee1f" />
+
+Now, using AI to calculate the elapsed time between the discovery of the correct password and the compromised login, we found it to be approximately 92.17 seconds.
+
+
+
